@@ -1,0 +1,18 @@
+{
+  "name": "incident-management-system",
+  "version": "1.0.0",
+  "description": "System to track all the incident related to product",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Incident-Management-System"
+  ],
+  "author": "Devashish Bakare",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
