@@ -1,3 +1,8 @@
 module.exports.signIn = function(req, res){
-    return res.end('<h1>Sign IN Page</h1>');
+    return res.render('signIn');
 }
+
+module.exports.signUp = function(req, res){
+    return res.render('signUp');
+}
+
