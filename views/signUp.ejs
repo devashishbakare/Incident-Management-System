@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="container">
-        <form>
+        <form action = "/users/createUser" method="POST">
           <h2>Sign Up</h2>
           <div class="form-group">
             <label for="name" class ="label-spacing">Name:</label>
@@ -22,7 +22,7 @@
           </div>
           <div class="form-group">
             <label for="password-confirm" class ="label-spacing">Confirm Password:</label>
-            <input type="password" id="password-confirm" name="password-confirm" required>
+            <input type="password" id="password-confirm" name="confirm_password" required>
           </div>
           <div class="form-button">
             <button class="btn-submit">Sign Up</button>
