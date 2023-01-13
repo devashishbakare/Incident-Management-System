@@ -1,7 +1,8 @@
 const User = require('../models/users');
 module.exports.signIn = function(req, res){
+
     if(req.isAuthenticated() == true){
-        //console.log("user is authenticate, we can't allow you to aceess sign-in page"); 
+        console.log("user is authenticate, we can't allow you to aceess sign-in page"); 
         return res.redirect('/');
     }
     return res.render('signIn');
@@ -48,10 +49,14 @@ module.exports.createUserSchema = async function(req, res){
 }
 
 module.exports.destroySession = function(req, res){
+    
+    
     req.logout(function(err){
         if(err){
+            console.log("error in destroying the session cookie");
             return next(err);
-        }         
+        }
+        console.log("Session is destoyed");
     });   
    
     return res.redirect("/users/sign-in");
@@ -59,6 +64,6 @@ module.exports.destroySession = function(req, res){
 
 module.exports.createSession = function(req, res){
 
-    console.log('Login successfull');
+    console.log('Login successfull')
     return res.redirect('/');
 }
