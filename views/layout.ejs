@@ -1,0 +1,27 @@
+<!-- commomn layout for reuse purpose -->
+<html>
+    <head>
+        <title>
+            INC MS
+        </title>
+
+        <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/partials.css">
+        <%- style %>
+    </head>
+    <body>
+
+        <!-- included common header here -->
+        <%- include("_partials"); %>
+
+        <!-- partial of a page render here -->
+        <main id = "content-body">
+            <%- body %>
+        </main>
+        
+        
+        <!-- rendering the script tag for scripting as per requirement -->
+        <%- script %>
+    
+    </body>
+</html>

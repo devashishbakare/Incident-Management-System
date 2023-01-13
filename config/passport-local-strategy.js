@@ -5,8 +5,9 @@ const User = require('../models/users');
 
 passport.use(new passportLocal({
 
-    usernameField : 'email'
-    }, function(email, password, done){
+    usernameField : 'email',
+    passReqToCallback : true
+    }, function(req, email, password, done){
         User.findOne({email : email}, function(err, user){
             if(err){
                 console.log("Not able to find the user");

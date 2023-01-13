@@ -10,4 +10,5 @@ router.get('/register-user', userController.signUp);
 router.post('/createUser', userController.createUserSchema);
 router.post('/createSession',  passport.authenticate('local', { failureRedirect: '/login' }),userController.createSession);
 router.get('/home', passport.checkAuthentication ,homeController.home);
+router.get('/sign-out', userController.destroySession);
 module.exports = router;

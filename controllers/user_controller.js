@@ -1,14 +1,15 @@
 const User = require('../models/users');
 module.exports.signIn = function(req, res){
     if(req.isAuthenticated() == true){
-        return res.redirect('/users/home');
+        //console.log("user is authenticate, we can't allow you to aceess sign-in page"); 
+        return res.redirect('/');
     }
     return res.render('signIn');
 }
 
 module.exports.signUp = function(req, res){
     if(req.isAuthenticated() == true){
-        return res.redirect('/users/home');
+        return res.redirect('/');
     }
     return res.render('signUp');
 }
@@ -46,8 +47,18 @@ module.exports.createUserSchema = async function(req, res){
 
 }
 
+module.exports.destroySession = function(req, res){
+    req.logout(function(err){
+        if(err){
+            return next(err);
+        }         
+    });   
+   
+    return res.redirect("/users/sign-in");
+}
+
 module.exports.createSession = function(req, res){
 
     console.log('Login successfull');
-    return res.render('home');
+    return res.redirect('/');
 }
