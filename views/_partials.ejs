@@ -1,45 +1,35 @@
-<div>
-    <%if(locals.user){%>
-       
-    <div id="bar">
-        <div id="bar-heading">
-            <p id="bar-heading-name">Incident Tracker</p>
-        </div>
-        <div id="sign-out">
-            <a href="/users/sign-out">
-                <button class = "route-button sign-out-button">sign-out</button>
-            </a>
+<%if(locals.user){%>
+    <div class="heading-bar">
+        <div class="heading-bar-title">Incident Management System</div>
+        <div class="heading-bar-signout">
+          <button class="signout-button">Sign Out</button>
         </div>
     </div>
-    <div id = "main-div">
-        <div id = "left-div">
-            <div id="create-incident">
-                <button class = "route-button">
-                    Create Incident
-                </button>
-            </div>
-            <div id ="show-all-incident">
-                <button class = "route-button">
-                    All Incidents
-                </button>
-            </div>
-            <div id="search-incident">
-                <button class = "route-button">
-                    Search Incident
-                </button>
-            </div>
-            <div id="incident-status">
-                <button class = "route-button">
-                    Incident Status
-                </button>
-            </div>
-            <div id="teams">
-                <button class = "route-button">
-                    All Teams
-                </button>
-            </div>
+      <div class="main-div">
+        <div class="left-div">
+            <span class = "aside-button">
+                <a href="#">
+                    <button class="button-style">Create Incident</button>
+                </a>
+            </span>
+            <span class = "aside-button">
+                <a href="#">
+                    <button class="button-style">Search Incident</button>
+                </a>
+            </span>
+            <span class = "aside-button">
+                <a href="#">
+                    <button class="button-style">All Incident</button>
+                </a>
+            </span>
+            <span class = "aside-button">
+                <a href="#">
+                    <button class="button-style">Create Group</button>
+                </a>
+            </span>
         </div>
-        
-    </div>  
-    <%}%>
-</div>
+        <div class="right-div">
+            <%- body %>
+        </div>
+    </div>
+<%}%>
