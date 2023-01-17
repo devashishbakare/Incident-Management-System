@@ -1,0 +1,90 @@
+#search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .multiple-search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  #search-criteria {
+    margin-bottom: 10px;
+    margin-left : 50px;
+  }
+  
+  #incident-number-input,
+  #name-input,
+  #date-input {
+    margin-bottom: 10px;
+    width: 50%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #search-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left : 50px;
+  }
+  
+  #searchby-id{
+    margin-left : 40px;
+  }
+  
+  /* ************************************ */
+  
+  
+  
+  .search-result-bar {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .search-result-bar-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .incident-number {
+    margin-right: 10px;
+    font-weight: bold;
+    margin-right : 40px;
+  }
+  .incident-state{
+    margin-right: 40px;
+    margin-left : 40px;
+  }
+  
+  .issue {
+    margin-right: 40px;
+    margin-left : 40px;
+  }
+  
+  .open-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left : 40px;
+  }
+  /* *********************** */
+  
+  .search-by-input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  

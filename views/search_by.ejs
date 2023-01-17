@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Incident</title>
+    <link rel="stylesheet" href="/css/search_by.css">
+</head>
+<body>
+
+  <div id = "search-container">
+    <!-- search according to user -->
+        <div class="multiple-search-container">
+          <label for="search-criteria" id ="searchby-id">Search by:</label>
+          <select id="search-criteria" name="search-criteria">
+              <option value="incident-number">Incident Number</option>
+              <option value="name">Name</option>
+              <option value="date">Date</option>
+          </select>
+          <input type="text" id="incident-number-input" placeholder="Enter incident number" style="display:none;">
+          <input type="text" id="name-input" placeholder="Enter name" style="display:none;">
+          <input type="date" id="date-input" placeholder="Enter date" style="display:none;">
+          <button id="search-button">Search</button>
+        </div>
+        
+        <div class = "search-by-input">
+          <input type="number" id="id-input" placeholder="Enter Incidet Number">
+          <button id="search-button">Search</button>
+        </div>
+
+        <div class= "search-by-input">
+          <input type="text" id="name-input" placeholder="Enter name">
+          <button id="search-button">Search</button>
+        </div>
+
+        <div class = "search-by-input">
+          <label for="select-date-seach">Select date</label>
+          <input type="date" id="name-input">
+          <button id="search-button">Search</button>
+        </div>
+
+        <!-- this code for displaying after seaching on the basis of user queries  -->
+      
+        <div class="search-result-bar">
+          <div class="search-result-bar-content">
+              <span class="incident-number">Incident No: db info</span>
+              <span class="incident-state">State: add from db</span>
+              <span class="issue">Issue: Platform Issue</span>
+              <button class="open-button">Open</button>
+          </div>
+      </div>
+
+  </div>
+  
+  
+
+</body>
+</html>
+
+<!-- 
+
+  //we have to add this to js so that, we can learn something new and get things done
+  
+  const searchCriteria = document.getElementById("search-criteria");
+const incidentNumberInput = document.getElementById("incident-number-input");
+const nameInput = document.getElementById("name-input");
+const dateInput = document.getElementById("date-input");
+
+searchCriteria.addEventListener("change", function() {
+incidentNumberInput.style.display = "none";
+nameInput.style.display = "none";
+dateInput.style.display = "none";
+  
+  if (searchCriteria.value === "incident-number") {
+    incidentNumberInput.style.display = "block";
+  } else if (searchCriteria.value === "name") {
+    nameInput.style.display = "block";
+  } else if (searchCriteria.value === "date") {
+    dateInput.style.display = "block";
+  }
+});
+ -->
