@@ -5,11 +5,13 @@ const port = 8000;
 //required libararies 
 const mongoose = require('mongoose');
 const db = require('./config/mongoose');
+const autoIncrement = require('mongoose-auto-increment');
 const session = require('express-session');
 const mongoStore = require('connect-mongo');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const expressLayouts = require('express-ejs-layouts');
+
 
 //cookie parser and for its use
 const cookieParser = require("cookie-parser"); 

@@ -2,34 +2,37 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 }
 
 form {
-  width: 100%; /* set the width of the form */
-  margin: 0 auto; /* center the form on the page */
+  width: 100%; 
+  margin: 0 auto;
+  background-color: white;
 }
 
-.form-field-flex {
-  display: flex; /* use flex layout */
-  flex-direction: row; /* arrange the child elements in a row */
-  /* justify-content: space-evenly; spread the child elements evenly along the row */
-  /* border : 1px solid black; */
+.form-field{
+  display: flex;
+  flex-direction: row;
 }
 
-
-#check-details{
-  margin : 20px 40px;
+.left-form-field{
+  text-align: left;
+  border: 1px solid black;
+  padding: 3%;
 }
 
-#create-incident{
-  margin : 20px 40px;
+.right-form-field{
+  text-align: left;
+  border : 1px solid black;
+  padding: 2%;
 }
+
 .form-group {
-  margin-bottom: 20px; /* add some space between form elements */
-  margin-left : 20px;
-  margin-right : 5px;
-  margin-top: 5px;
-}
+  text-align: left;
+  margin: 4%;
+ }
+
 
 label {
   font-size: 18px; /* set the font size for the labels */
@@ -81,32 +84,11 @@ textarea {
   border-radius: 4px; /* rounded border */
 }
 
-#date-input{
-  margin-left : 210px;
+.time-field, .form-button{
+  display: flex;
+  flex-direction: row;
 }
 
-#time-input{
-  margin-left : 85px;
-}
-
-#solution-input{
-  margin-left : 180px;
-}
-#follow-input{
-  margin-left : 260px;
-}
-
-#additional-input{
-  margin-left : 120px;
-}
-
-#attachment-input{
-  margin-left : 70px;
-}
-#check-button-input{
-  margin-left : 100px;
-}
-
-#create-button-input{
-  margin-left : 210px;
+.form-button{
+  margin-left : 165px;
 }

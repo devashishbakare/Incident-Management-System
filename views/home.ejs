@@ -1,109 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Create Incident</title>
-    <link rel="stylesheet" href="/css/home.css">
-</head>
-<body>
-    <form>
-      <div class="form-field-flex">
-        <div class="form-group">
-          <label for="incident-state" class ="label-name">Incident state:</label>
-          <select id="incident-state" name="incident-state">
-            <option value="open">Open</option>
-            <option value="On-hold">On Hold</option>
-            <option value="closed">Closed</option>
-          </select>
+<link rel="stylesheet" href="/css/home.css">
+
+    <form action ="/incidents/create-incident" method="POST">
+      <div class = "form-field">
+
+        <div class = "left-form-field">
+          <div class="form-group">
+            <label for="incident-state" class ="label-name">Incident state:</label>
+            <select id="incident-state" name="incident_state">
+              <option value="open">Open</option>
+              <option value="On-hold">On Hold</option>
+              <option value="closed">Closed</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="employee-id" class ="label-name">Employee id/Owner:</label>
+            <input type="number" id="employee-id" name="employee_id">
+          </div>
+  
+          <div class="form-group">
+            <label for="issue-type" class ="label-name">Issue related to:</label>
+            <select id="issue-type" name="issue_related_to">
+              <option value="platefomr">Plateform</option>
+              <option value="service">Service</option>
+              <option value="teaching">Teaching</option>
+              <option value="teaching-assistance">TA</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="priority" class ="label-name">Priority:</label>
+            <select id="priority" name="priority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="impacted-count" class ="label-name">Impacted count:</label>
+            <input type="number" id="impacted-count" name="impacted_count">
+          </div>
+
+          <div class="form-group" id = "solution-input">
+            <label for="solution-group" class ="label-name" >Solution Group:</label>
+            <select id="solution-group" name="solution_group">
+                <option value="plateform-team">Plateform Team</option>
+                <option value="service-team">Service Team</option>
+                <option value="teaching-team">Teaching Team</option>
+            </select>
+          </div>
+
         </div>
-        <div class="form-group" id = "date-input">
-          <label for="occurrence-date" class ="label-name">Date/ time of occurrence:</label>
-          <input type="date" id="occurrence-date" name="occurrence-date">
-        </div>
-     </div>
+
+        <div class = "right-form-field">
+          <div class="form-group" id = "date-input">
+            <label for="occurrence-date" class ="label-name">Date of occurrence:</label>
+            <input type="date" id="occurrence-date" name="date_of_occurrence">
+          </div>
+  
+          <div class = "time-field">
+            <div class="form-group" id = "time-input">
+              <label for="start-time">Start Time:</label>
+              <input type="time" id="start-time" name="start_time">
+            </div>
     
-     <div class="form-field-flex">
-      <div class="form-group">
-        <label for="employee-id" class ="label-name">Employee id/Owner:</label>
-        <input type="number" id="employee-id" name="employee-id">
-      </div>
-      <div class="form-group" id = "time-input">
-        <label for="appointment-time">Appointment Time:</label>
-        <input type="time" id="appointment-time" name="appointment-time">
-      </div>
-    </div>
+            <div class="form-group" id = "time-input">
+              <label for="end-time">End Time:</label>
+              <input type="time" id="end-time" name="end_time">
+            </div>
+          </div>
+  
+          <div class="form-group" id = "follow-input">
+            <label for="follow-up-by" class ="label-name">Follow up by:</label>
+            <input type="text" id="follow-up-by" name="follow_up_by">
+          </div>
+  
+          <div class="form-group" id = "additional-input">
+            <label for="additional-comment" class ="label-name">Additional Comment:</label>
+            <textarea id="additional-comment" name="additional_comment"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="affected-module" class ="label-name">Affected Module:</label>
+            <textarea id="affected-module" name="affected-module"></textarea>
+          </div>
+  
+          <div class="form-group" id = "attachment-input">
+            <label for="attachment" class ="label-name">Attachment:</label>
+            <input type="file" id="attachment" name="attachment" accept="image/*">
+          </div>
 
-    <div class="form-field-flex">
-      <div class="form-group">
-        <label for="issue-type" class ="label-name">Issue related to:</label>
-        <select id="issue-type" name="issue-type">
-          <option value="platefomr">Plateform</option>
-          <option value="service">Service</option>
-          <option value="teaching">Teaching</option>
-          <option value="teaching-assistance">TA</option>
-        </select>
-      </div>
-      <div class="form-group" id = "solution-input">
-        <label for="solution-group" class ="label-name" >Solution Group:</label>
-        <select id="solution-group" name="solution-group">
-            <option value="plateform-team">Plateform Team</option>
-            <option value="service-team">Service Team</option>
-            <option value="teaching-team">Teaching Team</option>
-        </select>
-      </div>
-    </div>
+        </div>
 
-    <div class="form-field-flex">
-      <div class="form-group">
-        <label for="priority" class ="label-name">Priority:</label>
-        <select id="priority" name="priority">
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-        </select>
       </div>
-      
-      <div class="form-group" id = "follow-input">
-        <label for="follow-up-by" class ="label-name">Follow up by:</label>
-        <input type="text" id="follow-up-by" name="follow-up-by">
+
+      <div class = "form-button">
+
+          <div class="form-group form-button-group">
+            <button type="button" id="check-details">Check Details</button>
+          </div>
+          
+          <div class="form-group form-button-group" id="create-button-input">
+            <a href="/incidents/create-incident">
+              <button type="submit" id="create-incident">Create Incident</button>
+            </a>
+          </div>
+
       </div>
 
     </div>
 
-    <div class="form-field-flex">
-      
-      <div class="form-group">
-        <label for="impacted-count" class ="label-name">Impacted count:</label>
-        <input type="number" id="impacted-count" name="impacted-count">
-      </div>
-      <div class="form-group" id = "additional-input">
-        <label for="additional-comment" class ="label-name">Additional Comment:</label>
-        <textarea id="additional-comment" name="additional-comment"></textarea>
-      </div>
-    </div>
-
-
-    <div class="form-field-flex">
-      <div class="form-group">
-        <label for="affected-module" class ="label-name">Affected Module:</label>
-        <textarea id="affected-module" name="affected-module"></textarea>
-      </div>
-      <div class="form-group" id = "attachment-input">
-        <label for="attachment" class ="label-name">Attachment:</label>
-        <input type="file" id="attachment" name="attachment" accept="image/*">
-      </div>
-    </div>
-
-    <div class="form-field-flex" id ="check-button-input">
-      <div class="form-group">
-        <button type="button" id="check-details">Check Details</button>
-      </div>
-      <div class="form-group" id="create-button-input">
-        <button type="submit" id="create-incident">Create Incident</button>
-      </div>
-    </div>
+   
        
     </form>
     
-</body>
-</html>
-

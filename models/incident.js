@@ -1,7 +1,16 @@
 const mongoose = require('mongoose');
+const autoIncrement = require('mongoose-auto-increment');
+
+mongoose.connect = require('../config/mongoose');
+
+autoIncrement.initialize(mongoose.connection);
 
 const incidentSchema = new mongoose.Schema({
 
+  incidentNumber :{
+    type : Number,
+    required : true
+  },
   incident_state: {
     type: String,
     enum: ['open', 'on-hold', 'closed'],
@@ -15,9 +24,11 @@ const incidentSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  appointment_time: {
-    type: Date,
-    required: true
+  start_time: {
+    type: String,
+  },
+  end_time: {
+    type: String,
   },
   issue_related_to: {
     type: String,
@@ -47,6 +58,13 @@ const incidentSchema = new mongoose.Schema({
   }
 }, {timestamps : true});
 
-const Incident = mongoose.model('Incident', incidentSchema);
 
+incidentSchema.plugin(autoIncrement.plugin, {
+    model: 'Incident',
+    field: 'incidentNumber',
+    startAt: 1000,
+    incrementBy: 1
+});
+
+const Incident = mongoose.model('Incident', incidentSchema);
 module.exports = Incident;
