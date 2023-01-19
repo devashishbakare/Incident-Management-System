@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Create Incident</title>
-    <link rel="stylesheet" href="/css/incident_details.css">
-</head>
-<body>
+<link rel="stylesheet" href="/css/incident_details.css">
+<%const date = new Date(incident_document.date_of_occurrence).toISOString().slice(0,10);%>
 
-
-  <table>
+<table>
     
     <tr>
       <th colspan="2" class = "table-heading">Incident Details</th>
@@ -15,72 +9,68 @@
   
     <tr>
       <td class="left-column">Incident Number</td>
-      <td id="incident-number-data"><%= incidentNumber %></td>
+      <td id="incident-number-data"><%= incident_document.incidentNumber %></td>
     </tr>
 
     <tr>
       <td class="left-column">Incident state</td>
-      <td id="incident-state-data"><%= incident_state %></td>
+      <td id="incident-state-data"><%= incident_document.incident_state %></td>
     </tr>
 
     <tr>
       <td class="left-column">Date/ time of occurrence</td>
-      <td id="occurrence-date-data"><%= date_of_occurrence %></td>
+      <td id="occurrence-date-data"><%= date %></td>
     </tr>
 
     <tr>
       <td class="left-column">Start Time</td>
-      <td id="start-time-data"><%=start_time %></td>
+      <td id="start-time-data"><%=incident_document.start_time %></td>
     </tr>
 
     <tr>
       <td class="left-column">End Time</td>
-      <td id="end-time-data"><%=end_time %></td>
+      <td id="end-time-data"><%=incident_document.end_time %></td>
     </tr>
 
     <tr>
       <td class="left-column">Priority</td>
-      <td id="priority-data"><%= priority%></td>
+      <td id="priority-data"><%= incident_document.priority%></td>
     </tr>
 
     <tr>
       <td class="left-column">Issue related to</td>
-      <td id="issue-related-data"><%= issue_related_to %></td>
+      <td id="issue-related-data"><%= incident_document.issue_related_to %></td>
     </tr>
 
     <tr>
       <td class="left-column">Affected Module</td>
-      <td id="affected-module-data"><%= %></td>
+      <td id="affected-module-data"><%= incident_document.affected_module%></td>
     </tr>
 
     <tr>
       <td class="left-column">Impacted count</td>
-      <td id="impacted-count-data"><%= impacted_count %></td>
+      <td id="impacted-count-data"><%= incident_document.impacted_count %></td>
     </tr>
 
     <tr>
       <td class="left-column">Solution Group</td>
-      <td id="solution-group-data"><%= solution_group %></td>
+      <td id="solution-group-data"><%= incident_document.solution_group %></td>
     </tr>
 
     <tr>
       <td class="left-column">Employee id/Owner</td>
-      <td id="empid-data"><%= employee_id %></td>
+      <td id="empid-data"><%= incident_document.employee_id %></td>
     </tr>
 
     <tr>
       <td class="left-column">Follow up by</td>
-      <td id="follow-up-name-data"><%= follow_up_by %></td>
+      <td id="follow-up-name-data"><%= incident_document.follow_up_by %></td>
     </tr>
 
     <tr>
       <td class="left-column">Additional Comment</td>
-      <td id="additional-comment-data"><%= additional_comment %></td>
+      <td id="additional-comment-data"><%= incident_document.additional_comment %></td>
     </tr>
 
   </table>
   
-
-</body>
-</html>
-

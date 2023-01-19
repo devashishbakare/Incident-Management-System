@@ -14,7 +14,8 @@ module.exports.createIncident = function(req, res){
         priority: req.body.priority,
         follow_up_by: req.body.follow_up_by,
         impacted_count: req.body.impacted_count,
-        additional_comment: req.body.additional_comment
+        additional_comment: req.body.additional_comment,
+        affected_module: req.body.affected_module
     });
     newIncident.save((err, incident) => {
         if (err) {
@@ -24,33 +25,10 @@ module.exports.createIncident = function(req, res){
             console.log("document added succesfully");
             let id = incident._id;
             console.log(id+"createId");
-            return res.redirect('/incidents/display-template/?id=" + incident._id');
+            return res.redirect(`/incidents/display-template/?id=${incident._id}`);
         }
     });
-    
-    // Incident.create({
-    //     incident_state: req.body.incident_state,
-    //     date_of_occurrence: req.body.date_of_occurrence,
-    //     employee_id: req.body.employee_id,
-    //     start_time: req.body.start_time,
-    //     end_time: '00:00:00',
-    //     issue_related_to: req.body.issue_related_to,
-    //     solution_group: req.body.solution_group,
-    //     priority: req.body.priority,
-    //     follow_up_by: req.body.follow_up_by,
-    //     impacted_count: req.body.impacted_count,
-    //     additional_comment: req.body.additional_comment
-    // }, function(err, incident){
-    //     if(err){
-    //         console.log("Error createing incident document");
-    //         return;
-    //     }else{
-    //         console.log("document added succesfully");
-    //         let id = incident._id;
-    //         return res.redirect('/incidents/display-template/id');
-    //     }
-    // })
- 
+   
 }
 
 module.exports.showTemplate = async function(req, res){
@@ -60,7 +38,7 @@ module.exports.showTemplate = async function(req, res){
     console.log(req.query.id);
 
     try{
-        incident = await Incident.findById(req.param.id);
+        let incident = await Incident.findById(req.query.id);
         
         console.log("Here we are rendering the page");
         return res.render("incident_details",{
@@ -70,7 +48,7 @@ module.exports.showTemplate = async function(req, res){
 
 
     }catch(err){
-        console.log("error while fetchin incident from param");
+        console.log("error while fetching incident from param");
         return;
     }
 

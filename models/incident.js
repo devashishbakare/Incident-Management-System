@@ -13,7 +13,7 @@ const incidentSchema = new mongoose.Schema({
   },
   incident_state: {
     type: String,
-    enum: ['open', 'on-hold', 'closed'],
+    enum: ['Open', 'On-hold', 'Closed'],
     required: true
   },
   date_of_occurrence: {
@@ -32,17 +32,17 @@ const incidentSchema = new mongoose.Schema({
   },
   issue_related_to: {
     type: String,
-    enum: ['platefomr', 'service', 'teaching', 'teaching-assistance'],
+    enum: ['Plateform', 'Service', 'Teaching', 'Teaching-Assistance'],
     required: true
   },
   solution_group: {
     type: String,
-    enum: ['plateform-team', 'service-team', 'teaching-team'],
+    enum: ['Plateform-team', 'Service-team', 'Teaching-team'],
     required: true
   },
   priority: {
     type: String,
-    enum: ['high', 'medium', 'low'],
+    enum: ['High', 'Medium', 'Low'],
     required: true
   },
   follow_up_by: {
@@ -55,6 +55,9 @@ const incidentSchema = new mongoose.Schema({
   },
   additional_comment: {
     type: String
+  },
+  affected_module : {
+    type : String
   }
 }, {timestamps : true});
 
