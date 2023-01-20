@@ -63,7 +63,11 @@ module.exports.showAllIncidents = async function(req, res){
         incident_state: incident.incident_state,
         issue_related_to: incident.issue_related_to,
         priority: incident.priority,
+        createdAt: incident.createdAt
     }
+        });
+        incidentData.sort((a, b) => {
+            return new Date(b.createdAt) - new Date(a.createdAt);
         });
         res.render('all_incident', { incidents: incidentData });
     }catch(err){
