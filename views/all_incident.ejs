@@ -1,5 +1,16 @@
-<!-- 
-    here we need get all the list of the incident
-    Ireate over it and put them into the bar like structre, and user will be clicked on it
-    after clicking it should have the templete that display all the information
--->
+<link rel="stylesheet" href="/css/all_incident.css">
+<%for(let incident of incidents){%>
+    <div class="search-result-bar">
+        <div class="search-result-bar-content">
+            <span class="incident-number span-align">Incident No: <%= incident.incidentNumber%></span>
+            <span class="incident-state span-align">State: <%= incident.incident_state%></span>
+            <span class="issue span-align">Issue: <%= incident.issue_related_to%></span>
+            <span class="issue span-align">Priority: <%= incident.priority%></span>
+            <span class="issue span-align">
+                <a href="/incidents/open-incident/<%= incident.incidentNumber%>">
+                    <button class="open-button">Open</button>
+                </a>
+            </span>
+        </div>
+    </div>
+<%}%>

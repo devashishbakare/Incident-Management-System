@@ -51,6 +51,44 @@ module.exports.showTemplate = async function(req, res){
         console.log("error while fetching incident from param");
         return;
     }
+}
 
+module.exports.showAllIncidents = async function(req, res){
+
+    try{
+        const incidents = await Incident.find({});
+        const incidentData = incidents.map((incident) => {
+    return {
+        incidentNumber: incident.incidentNumber,
+        incident_state: incident.incident_state,
+        issue_related_to: incident.issue_related_to,
+        priority: incident.priority,
+    }
+        });
+        res.render('all_incident', { incidents: incidentData });
+    }catch(err){
+        console.log(err+" there is error while iterating over schema");
+        return;
+    }
+   
+}
+
+module.exports.showIncident = async function(req, res){
+   
+    try{
+        let incident = await Incident.findOne({incidentNumber: req.params.id});
+        console.log(incident);
+        if(incident){
+            return res.render('incident_details',{
+                incident_document : incident
+            });
+        }else{
+            console.log(err+'incident not found from id');
+            return;
+        }
+    }catch(err){
+        console.log(err+"Error while displaying indivisual template");
+        return;
+    }
 }
 

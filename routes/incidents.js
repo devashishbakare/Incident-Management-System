@@ -6,5 +6,7 @@ const incidentController = require('../controllers/incident_controller');
 
 router.post('/create-incident', incidentController.createIncident);
 router.get('/display-template', incidentController.showTemplate);
+router.get('/show-all-incident', incidentController.showAllIncidents);
+router.get('/open-incident/:id', incidentController.showIncident);
 
 module.exports = router;

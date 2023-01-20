@@ -44,42 +44,7 @@
   
   
   
-  .search-result-bar {
-    background-color: #f2f2f2;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .search-result-bar-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .incident-number {
-    margin-right: 10px;
-    font-weight: bold;
-    margin-right : 40px;
-  }
-  .incident-state{
-    margin-right: 40px;
-    margin-left : 40px;
-  }
-  
-  .issue {
-    margin-right: 40px;
-    margin-left : 40px;
-  }
-  
-  .open-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-left : 40px;
-  }
+ 
   /* *********************** */
   
   .search-by-input{
