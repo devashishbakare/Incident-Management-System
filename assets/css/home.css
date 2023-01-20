@@ -2,13 +2,21 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
+}
+body{
+  background-color: white;
 }
 
 form {
   width: 100%; 
   margin: 0 auto;
   background-color: white;
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border : 1px solid black; */
+  text-align: left;
 }
 
 .form-field{
@@ -18,19 +26,21 @@ form {
 
 .left-form-field{
   text-align: left;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 3%;
+  margin-right: 20%;
 }
 
 .right-form-field{
   text-align: left;
-  border : 1px solid black;
+  /* border : 1px solid black; */
   padding: 2%;
 }
 
 .form-group {
   text-align: left;
   margin: 4%;
+  width: 100%;
  }
 
 
@@ -43,7 +53,7 @@ label {
 input,
 select,
 textarea {
-  width: 100%; /* set the width of the input fields to fill the container */
+  width: 130%; /* set the width of the input fields to fill the container */
   padding: 12px; /* add some padding to the input fields */
   border-radius: 4px; /* add rounded borders to the input fields */
   border: 1px solid #ccc; /* add a border to the input fields */
@@ -55,34 +65,33 @@ textarea {
 
 #impacted-count,
 #occurrence-date{
-  width: 30%;
+  width: 50%;
 }
 
-#create-incident{
-  background-color: #4CAF50; /* Green background color */
-  color: white; /* White text color */
-  padding: 15px 32px; /* Padding for the button */
-  text-align: center; /* Center the text inside the button */
-  text-decoration: none; /* Remove the underline from the text */
-  display: inline-block; /* Display the button as an inline-block element */
-  font-size: 16px; /* Set the font size for the text */
-  margin: 4px 2px; /* Add some margins for spacing */
-  cursor: pointer; /* Add a cursor on hover */
-  border-radius: 4px; /* rounded border */
+#create-incident-button{
+
+  height: inherit;
+  background: rgb(47,79,79);
+  border-radius: 25px;
+  box-shadow: rgb(47,79,79) 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 150px;
+  word-break: break-word;
+  border: 0;
 }
 
-#check-details{
-  background-color: #f44336; /* Red background color */
-  color: white; /* White text color */
-  padding: 15px 32px; /* Padding for the button */
-  text-align: center; /* Center the text inside the button */
-  text-decoration: none; /* Remove the underline from the text */
-  display: inline-block; /* Display the button as an inline-block element */
-  font-size: 16px; /* Set the font size for the text */
-  margin: 4px 2px; /* Add some margins for spacing */
-  cursor: pointer; /* Add a cursor on hover */
-  border-radius: 4px; /* rounded border */
-}
 
 .time-field, .form-button{
   display: flex;
@@ -90,5 +99,8 @@ textarea {
 }
 
 .form-button{
-  margin-left : 165px;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  
 }

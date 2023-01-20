@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="/css/incident_details.css">
 <%const date = new Date(incident_document.date_of_occurrence).toISOString().slice(0,10);%>
 
-<table>
+<table id = "incident-details-table">
     
     <tr>
       <th colspan="2" class = "table-heading">Incident Details</th>
     </tr>
   
-    <tr>
-      <td class="left-column">Incident Number</td>
-      <td id="incident-number-data"><%= incident_document.incidentNumber %></td>
+    <tr> 
+        <td class="left-column">Incident Number</td>  
+        <td id="incident-number-data"><%= incident_document.incidentNumber %></td>
     </tr>
 
     <tr>
@@ -73,4 +73,8 @@
     </tr>
 
   </table>
-  
+  <div id = "edit-incident-button">
+    <a href="/incidents/edit/<%= incident_document.incidentNumber %>">
+      <button class = "edit-button">Edit Incident</button>
+    </a>
+  </div>

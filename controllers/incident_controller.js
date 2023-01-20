@@ -1,8 +1,7 @@
 const Incident = require('../models/incident');
 
 module.exports.createIncident = function(req, res){
- 
-    console.log(req.body);
+
     const newIncident = new Incident({
         incident_state: req.body.incident_state,
         date_of_occurrence: req.body.date_of_occurrence,
@@ -33,10 +32,6 @@ module.exports.createIncident = function(req, res){
 
 module.exports.showTemplate = async function(req, res){
     
-    console.log(req.query._id);
-    console.log(req.query);
-    console.log(req.query.id);
-
     try{
         let incident = await Incident.findById(req.query.id);
         
@@ -81,7 +76,7 @@ module.exports.showIncident = async function(req, res){
    
     try{
         let incident = await Incident.findOne({incidentNumber: req.params.id});
-        console.log(incident);
+    
         if(incident){
             return res.render('incident_details',{
                 incident_document : incident
@@ -96,3 +91,50 @@ module.exports.showIncident = async function(req, res){
     }
 }
 
+module.exports.editIncident = async function(req, res){
+
+    
+    try{
+            let incident = await Incident.findOne({incidentNumber: req.params.id});
+            if(incident){   
+                return res.render("edit_incident",{
+                    incident_document: incident
+                });
+            }else{
+                console.log("incident not found");
+                return;
+            }
+    }catch(err){
+        console.log(err+"error while fetching incident that comming from edit incident route");
+        return;
+    }
+
+}
+
+module.exports.updateIncident = async function(req, res){
+   
+    const update = req.body;
+    try{
+        let incident = await Incident.findOne({incidentNumber: req.params.id});
+            if(incident){   
+
+                Incident.findOneAndUpdate({incidentNumber: req.params.id}, update, {new: true} , function(err, incident){
+                    if(err){
+                        console.log(err+"error while updating the document");
+                        return;
+                    }else{
+                        console.log("incident has been updated successfully");
+                        return res.render("incident_details",{
+                            incident_document: incident
+                        });
+                    }
+            });
+            }else{
+                console.log("incident not found");
+                return;
+            }
+    }catch(err){
+        console.log(err+"error while fetching incident that comming from edit incident route");
+        return;
+    }
+}

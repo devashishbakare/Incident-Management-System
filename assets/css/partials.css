@@ -1,18 +1,20 @@
 .heading-bar {
     display: flex; /* use flexbox layout to position the elements */
     align-items: center; /* center the elements vertically */
-    background-color: #3d2dce; /* set a background color for the heading bar */
-    height: 50px; /* set a fixed height for the heading bar */
+    background-color: rgb(47,79,79); /* set a background color for the heading bar */
+    height: 65px; /* set a fixed height for the heading bar */
     color: #f2f2f2;
   }
   
   .heading-bar-title {
     flex: 1; /* take up all available space */
     text-align: center; /* center the text */
+    font-family: 'Open Sans', sans-serif;
     font-size: 20px; /* set the font size for the title */
     font-weight: bold; /* make the title bold */
     padding-left: 10px; /* add some padding to the title */
     padding-right: 10px; /* add some padding to the title */
+    margin-left : 10%;
   }
   
   .heading-bar-signout {
@@ -55,7 +57,7 @@
 }
 
 .button-style {
-    background-color: #3d2dce; /* Green background color */
+    background-color: rgb(47,79,79); /* Green background color */
     color: white; /* White text color */
     padding: 15px 32px; /* Padding for the button */
     text-align: center; /* Center the text inside the button */
