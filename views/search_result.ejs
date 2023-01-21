@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/all_incident.css">
+
+    <form action="/incidents/search" method="POST" id = "search-incident-section">
+        <input type="number" id="search-input-section" placeholder="Enter Incidet Number">
+        <button class = "open-button search-button">Search</button>
+    </form>
+
+<div id ="all-incident-list">
+    
+    <div class="search-result-bar">
+        <div class="search-result-bar-content">
+            <span class="incident-number span-align">Incident No: <%= incidents.incidentNumber%></span>
+            <span class="incident-state span-align">State: <%= incidents.incident_state%></span>
+            <span class="issue span-align">Issue: <%= incidents.issue_related_to%></span>
+            <span class="issue span-align">Priority: <%= incidents.priority%></span>
+            <span class="issue span-align">
+                <a href="/incidents/open-incident/<%= incidents.incidentNumber%>">
+                    <button class="open-button">Open</button>
+                </a>
+            </span>
+        </div>
+    </div>
+    
+</div>

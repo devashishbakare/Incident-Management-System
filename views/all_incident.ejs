@@ -1,16 +1,25 @@
 <link rel="stylesheet" href="/css/all_incident.css">
-<%for(let incident of incidents){%>
-    <div class="search-result-bar">
-        <div class="search-result-bar-content">
-            <span class="incident-number span-align">Incident No: <%= incident.incidentNumber%></span>
-            <span class="incident-state span-align">State: <%= incident.incident_state%></span>
-            <span class="issue span-align">Issue: <%= incident.issue_related_to%></span>
-            <span class="issue span-align">Priority: <%= incident.priority%></span>
-            <span class="issue span-align">
-                <a href="/incidents/open-incident/<%= incident.incidentNumber%>">
-                    <button class="open-button">Open</button>
-                </a>
-            </span>
+
+    <form action="/incidents/search" method="POST" id = "search-incident-section">
+        <input type="number" id="search-input-section" name ="incidentNumber" placeholder="Enter Incidet Number">
+        <button class = "open-button search-button">Search</button>
+    </form>
+
+<div id ="all-incident-list">
+    <%for(let incident of incidents){%>
+        <div class="search-result-bar">
+            <div class="search-result-bar-content">
+                <span class="incident-number span-align">Incident No: <%= incident.incidentNumber%></span>
+                <span class="incident-state span-align">State: <%= incident.incident_state%></span>
+                <span class="issue span-align">Issue: <%= incident.issue_related_to%></span>
+                <span class="issue span-align">Priority: <%= incident.priority%></span>
+                <span class="issue span-align">
+                    <a href="/incidents/open-incident/<%= incident.incidentNumber%>">
+                        <button class="open-button">Open</button>
+                    </a>
+                </span>
+            </div>
         </div>
-    </div>
-<%}%>
+    <%}%>
+    
+</div>

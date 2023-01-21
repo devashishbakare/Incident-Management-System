@@ -138,3 +138,20 @@ module.exports.updateIncident = async function(req, res){
         return;
     }
 }
+
+module.exports.searchIncident = async function(req, res){
+    console.log("req coming here in seach incident");
+    
+    try{
+        let incident = await Incident.findOne({incidentNumber: req.body.incidentNumber});
+        if(incident){
+            return res.render('search_result',{
+                incidents: incident
+            });
+        }
+    }catch(err){
+        console.log(err+"error while fetching the incident form req info");
+        return;
+    }
+
+}

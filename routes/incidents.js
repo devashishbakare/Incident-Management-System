@@ -10,4 +10,5 @@ router.get('/show-all-incident', incidentController.showAllIncidents);
 router.get('/open-incident/:id', incidentController.showIncident);
 router.get('/edit/:id', incidentController.editIncident);
 router.post('/update-incident/:id', incidentController.updateIncident);
+router.post('/search', incidentController.searchIncident);
 module.exports = router;
