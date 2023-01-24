@@ -12,9 +12,9 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 20px; /* set the font size for the title */
     font-weight: bold; /* make the title bold */
-    padding-left: 10px; /* add some padding to the title */
+    padding-left: 200px; /* add some padding to the title */
     padding-right: 10px; /* add some padding to the title */
-    margin-left : 10%;
+    
   }
   
   .heading-bar-signout {

@@ -2,7 +2,10 @@
     <div class="heading-bar">
         <div class="heading-bar-title">Incident Management System</div>
         <div class="heading-bar-signout">
-          <button class="signout-button">Sign Out</button>
+            <a href="/users/sign-out">
+                <button class="signout-button">Sign Out</button>
+            </a>
+          
         </div>
     </div>
       <div class="main-div">
@@ -33,5 +36,5 @@
         </div>
     </div>
 <%}else{%>
-    <%- include("signIn"); %>
+    <%- include("login_layout"); %>
 <%}%>
