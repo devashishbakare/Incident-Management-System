@@ -1,0 +1,9 @@
+
+<link rel="stylesheet" href="/css/node_mailer.css">
+
+    <div id = "mail_heading">
+        <p id ="mail_heading_text">New Incident has been Created</p>
+    </div>
+    <div id = "mail-body">    
+        <%- include("incident_details", {incident_document :incident_document}); %>
+  </div>

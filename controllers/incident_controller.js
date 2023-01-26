@@ -1,5 +1,5 @@
 const Incident = require('../models/incident');
-
+const nodeMailerController = require('../controllers/node_mailer_controller');
 module.exports.createIncident = function(req, res){
 
     const newIncident = new Incident({
@@ -16,12 +16,14 @@ module.exports.createIncident = function(req, res){
         additional_comment: req.body.additional_comment,
         affected_module: req.body.affected_module
     });
-    newIncident.save((err, incident) => {
+    newIncident.save(async(err, incident) => {
         if (err) {
             console.log(err+"error in creating a document");
             return;
         } else {
             console.log("document added succesfully");
+            let listOfEmailes = await nodeMailerController.getListOfMails();
+            nodeMailerController.sendMailOnIncidentCreation(incident, listOfEmailes);
             let id = incident._id;
             console.log(id+"createId");
             return res.redirect(`/incidents/display-template/?id=${incident._id}`);
@@ -118,12 +120,14 @@ module.exports.updateIncident = async function(req, res){
         let incident = await Incident.findOne({incidentNumber: req.params.id});
             if(incident){   
 
-                Incident.findOneAndUpdate({incidentNumber: req.params.id}, update, {new: true} , function(err, incident){
+                Incident.findOneAndUpdate({incidentNumber: req.params.id}, update, {new: true} , async function(err, incident){
                     if(err){
                         console.log(err+"error while updating the document");
                         return;
                     }else{
                         console.log("incident has been updated successfully");
+                        let listOfEmailes = await nodeMailerController.getListOfMails();
+                        nodeMailerController.sendMailOnIncidentUpdation(incident, listOfEmailes);
                         return res.render("incident_details",{
                             incident_document: incident
                         });
