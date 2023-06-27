@@ -1,33 +1,31 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-#login-layout-heading{
+#login-layout-heading {
   height: 60px;
-  width : 100%;
-  border : 1px solid black;
-  display : flex;
+  width: 100%;
+  /* border : 1px solid black; */
+  display: flex;
   justify-content: center;
   align-content: center;
 }
 
-#login-heading-name{
- 
-    border : 1px solid black;
-    margin-top: 16px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px; 
-    font-weight: bold;
-    padding-left: 10px;
-    padding-right: 10px;
-    
+#login-heading-name {
+  /* border : 1px solid black; */
+  margin-top: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-#login-body{
-  border : 1px solid red;
+#login-body {
+  /* border : 1px solid red; */
   height: 90vh;
   width: 100%;
-  margin : 5px;
+  margin: 5px;
 }

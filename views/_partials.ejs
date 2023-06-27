@@ -1,40 +1,35 @@
 <%if(locals.user){%>
-    <div class="heading-bar">
-        <div class="heading-bar-title">Incident Management System</div>
-        <div class="heading-bar-signout">
-            <a href="/users/sign-out">
-                <button class="signout-button">Sign Out</button>
-            </a>
-          
-        </div>
-    </div>
-      <div class="main-div">
-        <div class="left-div">
-            <span class = "aside-button">
-                <a href="/">
-                    <button class="button-style">Create Incident</button>
-                </a>
-            </span>
-            <span class = "aside-button">
+<div class="heading-bar">
+  <div class="heading-bar-title">Incident Management System</div>
+  <div class="heading-bar-signout">
+    <a href="/users/sign-out">
+      <button class="signout-button">Sign Out</button>
+    </a>
+  </div>
+</div>
+<div class="main-div">
+  <div class="left-div">
+    <span class="aside-button">
+      <a href="/">
+        <button class="button-style">Create Incident</button>
+      </a>
+    </span>
+    <!-- <span class = "aside-button">
                 <a href="#">
                     <button class="button-style">Search Incident</button>
                 </a>
-            </span>
-            <span class = "aside-button">
-                <a href="/incidents/show-all-incident">
-                    <button class="button-style">All Incident</button>
-                </a>
-            </span>
-            <span class = "aside-button">
+            </span> -->
+    <span class="aside-button">
+      <a href="/incidents/show-all-incident">
+        <button class="button-style">All Incident</button>
+      </a>
+    </span>
+    <!-- <span class = "aside-button">
                 <a href="#">
                     <button class="button-style">Create Group</button>
                 </a>
-            </span>
-        </div>
-        <div class="right-div">
-            <%- body %>
-        </div>
-    </div>
-<%}else{%>
-    <%- include("login_layout"); %>
-<%}%>
+            </span> -->
+  </div>
+  <div class="right-div"><%- body %></div>
+</div>
+<%}else{%> <%- include("login_layout"); %> <%}%>
